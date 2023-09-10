@@ -25,3 +25,10 @@ The controller handles user input and manages the flow of data between the model
 ## Database schema
 
 ![schema](https://github.com/mohanor/ft_transcendence/raw/main/images/schema.png)
+
+[!NOTE]
+
+<sup>change  .envexample to .env </sup>
+
+## RUN PROJECT
+
