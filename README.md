@@ -31,6 +31,6 @@ The controller handles user input and manages the flow of data between the model
 **change  .envexample to .env**
 
 ## RUN PROJECT
-
+```
 $ docker-compose up --build
-
+```
