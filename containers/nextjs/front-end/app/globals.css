@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.cardCreate{
+    background:linear-gradient(227.06deg, #7C71FF 10.14%, rgba(0, 0, 0, 0) 90.38%);
+    box-shadow: 0px 3px 25px 0px #00000040;
+}
+.cardCreate2{
+    background: linear-gradient(230.04deg, #483FBD 2.11%, rgba(46, 46, 72, 1) 102.63%);
+}
+/* Custom animation */
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%) ease-out;
+  }
+}
+
+.slideInUp {
+  animation-name: slideInUp;
+  animation-duration: 300ms;
+}
+
+.slideOutDown {
+  animation-name: slideOutDown;
+  animation-duration: 300ms;
+}
+
+.Toastify__toast-theme--light {
+  background-color: #393A6C !important;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+
+.Toastify__progress-bar--default {
+  background: #F4F4F4 !important; 
+  height: 4px;
+}
+
+
+@keyframes gradient-animation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+  }

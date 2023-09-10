@@ -1,0 +1,11 @@
+
+export const entrypointMsgRoom = "/chatroom/conversation/"
+export const entrypointUserRoom = "/room/usersroom/"
+export const entrypointBlockRoom = "/room/blockroom/"
+export const entrypointMyRoom = "/room/lastadd/"
+export const entrypointAllRoom = ""
+export const entrypointBlockUserRoom = ""
+export const entrypointUnBlockUserRoom = "/join/unblock"
+export const entrypointLeaveUserRoom = ""
+export const entrypointKickUserRoom = ""
+export const entrypointKgaurdRoom = "/chatroom/gaurdRoom/"
