@@ -35,7 +35,7 @@ The controller handles user input and manages the flow of data between the model
 
 ####first step:
 ```
-create new app from intra [INTRA 42] https://profile.intra.42.fr/oauth/applications/new
+create new app from intra [INTRA 42](https://profile.intra.42.fr/oauth/applications/new)
 ```
 
 ```
