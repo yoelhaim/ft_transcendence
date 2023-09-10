@@ -32,5 +32,5 @@ The controller handles user input and manages the flow of data between the model
 
 ## RUN PROJECT
 
-[!tab] docker-compose up --build
+$ docker-compose up --build
 
