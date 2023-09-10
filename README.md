@@ -28,7 +28,7 @@ The controller handles user input and manages the flow of data between the model
 
 [!NOTE]
 
-<sup>change  .envexample to .env </sup>
+**change  .envexample to .env**
 
 ## RUN PROJECT
 
