@@ -1,7 +1,7 @@
 # ft_transcendence
 
 created by 
-### [mohemmed atef(https://www.linkedin.com/in/mohammed-atef-5b5039189/)
+### [mohemmed atef](https://www.linkedin.com/in/mohammed-atef-5b5039189/)
 ### [youssef el haimer](https://www.linkedin.com/in/youmer22)
 ### [yasser el azizi](https://www.linkedin.com/in/yassir-el-azizi-1ba527216/)
 ### [youssef oussama](linkedin.com/in/youssef-oussama-907637176/)
