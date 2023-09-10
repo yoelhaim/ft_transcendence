@@ -1,5 +1,13 @@
 # ft_transcendence
 
+created by 
+### mohemmed atef
+### youssef el haimer
+### yasser el azizi
+### youssef oussama
+### anass klaikel
+
+
 ## MVC (Model-View-Controller)
 
 is a pattern in software design commonly used to implement user interfaces, data, and controlling logic
