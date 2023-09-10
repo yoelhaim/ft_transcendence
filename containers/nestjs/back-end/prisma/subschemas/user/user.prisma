@@ -1,0 +1,85 @@
+import { Game } from "../game/game"
+import { Friend } from "../friend/friend"
+import { Block } from "../block/block"
+import { Notification, RoomNotification } from "../notification/notification"
+import { RoomChat, UsersRoom, MessageRoom, BlockUsers  } from "../room/room"
+import { UserTheme } from "../themes/themes"
+
+model User {
+    id            Int      @id @default(autoincrement())
+    createAt      DateTime @default(now())
+    updatedAt     DateTime
+    lastName      String
+    firstName     String
+    email         String   @unique
+    UserName      String   @unique
+    avatar        String
+    isOnline      String   @default("online")
+    firstTime     Boolean  @default(true)
+    isOnTwoFactor Boolean  @default(true)
+    level         Float?   @default(0)
+    cover         String?
+    bio           String?
+    score         Int?     @default(50)
+    token         String?  @default("empty")
+    twofactor     Boolean  @default(false)
+
+    firstPlayer            Game[]         @relation("firstPlayer")
+    secondPlayer           Game[]         @relation("secondPlayer")
+    userThemes             UserTheme[]
+    userNotification       Notification[] @relation("userNotification")
+    userNotificationsender Notification[] @relation("userNotificationsender")
+    // senderUser FriendRequestNotification[] @relation("senderUser")
+    // senderUserAtRoom RoomNotification[] @relation("senderUserAtRoom")
+
+    RoomChats    RoomChat[]
+    UsersRooms   UsersRoom[]
+    MessageRooms MessageRoom[]
+    BlockUsers   BlockUsers[]
+
+    Friends  Friend[] @relation("Friend")
+    FriendMe Friend[] @relation("Me")
+
+    Blocked   Block[] @relation("Blocked")
+    BlockedMe Block[] @relation("Me")
+
+    conversation  chat[]        @relation("chat")
+    conversation2 chat[]        @relation("chat2")
+    recChat       messageChat[] @relation("receiv")
+    sentChat      messageChat[] @relation("send")
+}
+
+model messageChat {
+    id          Int      @unique @default(autoincrement())
+    receiv      User     @relation("receiv", fields: [receiverid], references: [id])
+    receiverid  Int
+    send        User     @relation("send", fields: [senderid], references: [id])
+    senderid    Int
+    chatId      Int
+    message     String
+    mychanellID Int
+    updatedAt   DateTime
+    createdAt   DateTime @default(now())
+    Channel     chat     @relation("channel", fields: [mychanellID], references: [id])
+}
+
+model chat {
+    id         Int      @unique @default(autoincrement())
+    senderid   Int
+    receiverid Int
+    updatedAt  DateTime
+    createdAt  DateTime @default(now())
+
+    chatBlock    User          @relation("chat", fields: [senderid], references: [id])
+    channel      messageChat[] @relation("channel")
+    secondPlayer User          @relation("chat2", fields: [receiverid], references: [id])
+
+    @@unique([senderid, receiverid])
+}
+
+model tokenz {
+    id        Int      @unique @default(autoincrement())
+    token     String
+    createdAt DateTime @default(now())
+    updatedAt DateTime
+}

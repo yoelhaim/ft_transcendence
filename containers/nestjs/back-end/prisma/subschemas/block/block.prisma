@@ -1,0 +1,21 @@
+
+import { User } from "../user/user"
+
+model Block {
+    id            Int         @id @default(autoincrement())
+    user          User        @relation("Me", fields: [userId], references: [id])
+    userId        Int
+    blockedUser   User        @relation("Blocked", fields: [blockedUserId], references: [id])
+    blockedUserId Int
+    status        BlockStatus @default(unblocked)
+
+    @@unique([userId, blockedUserId])
+    @@unique([blockedUserId, userId])
+}
+
+
+enum BlockStatus {
+    unblocked
+    blocked
+}
+

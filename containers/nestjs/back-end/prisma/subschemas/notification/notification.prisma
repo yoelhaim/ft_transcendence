@@ -1,0 +1,44 @@
+import { User } from "../user/user"
+
+model Notification {
+    id           Int      @id @default(autoincrement())
+    read         Boolean  @default(false)
+    createdAt    DateTime @default(now())
+    userId       Int
+    type         String
+    senderUserId Int
+
+    user User @relation("userNotification", fields: [userId], references: [id])
+    // notification FriendRequestNotification[] @relation("notification")
+
+    sender User @relation("userNotificationsender", fields: [senderUserId], references: [id])
+
+    roomRotification RoomNotification[] @relation("notification")
+}
+
+
+
+// model FriendRequestNotification {
+//     id             Int @id @default(autoincrement())
+//     notificationId Int
+//     senderUserId   Int
+
+//     notification Notification @relation("notification", fields: [notificationId], references: [id])
+//     senderUser   User         @relation("senderUser", fields: [senderUserId], references: [id])
+// }
+
+
+
+model RoomNotification {
+    id             Int    @id @default(autoincrement())
+    notificationId Int
+    // senderUserId   Int
+    message        String
+
+    roomRotification Notification @relation("notification", fields: [notificationId], references: [id])
+    // senderUserAtRoom User         @relation("senderUserAtRoom", fields: [senderUserId], references: [id])
+}
+
+
+
+

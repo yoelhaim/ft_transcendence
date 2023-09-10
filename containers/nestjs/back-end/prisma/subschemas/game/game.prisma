@@ -1,0 +1,18 @@
+import { User } from "../user/user"
+
+model Game {
+    id Int @id @default(autoincrement())
+
+    firstPlayerId     Int
+    secondPlayerId    Int
+    firstPlayerScore  Int
+    secondPlayerScore Int
+
+    isFinished Boolean @default(false)
+
+    firstPlayer  User @relation("firstPlayer", fields: [firstPlayerId], references: [id])
+    secondPlayer User @relation("secondPlayer", fields: [secondPlayerId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

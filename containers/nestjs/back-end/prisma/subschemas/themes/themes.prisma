@@ -1,0 +1,24 @@
+import { User } from "../user/user"
+
+model Themes {
+    id           Int           @id @default(autoincrement())
+    name         String
+    image        String
+    createdAt    DateTime      @default(now())
+    updatedAt    DateTime      @updatedAt
+
+    userThemes UserTheme[]
+}
+
+model UserTheme {
+    id           Int           @id @default(autoincrement())
+    userId       Int
+    themeId      Int
+    createdAt    DateTime      @default(now())
+    updatedAt    DateTime      @updatedAt
+    @@unique([userId, themeId])
+
+    user      User          @relation(fields: [userId], references: [id])
+    theme     Themes         @relation(fields: [themeId], references: [id])
+}
+

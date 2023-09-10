@@ -1,0 +1,53 @@
+
+import { User } from "../user/user"
+
+model RoomChat {
+    id           Int           @id @default(autoincrement())
+    createAt     DateTime      @default(now())
+    updatedAt    DateTime
+    name         String        @unique
+    descreption  String
+    avatar       String?
+    type         String
+    password     String?
+    ownerId      Int
+    UsersRooms   UsersRoom[]
+    MessageRooms MessageRoom[]
+    BlockUsers   BlockUsers[]
+    userroomchat User          @relation(fields: [ownerId], references: [id])
+}
+
+
+model UsersRoom {
+    id        Int      @id @default(autoincrement())
+    createAt  DateTime @default(now())
+    updatedAt DateTime
+    userId    Int
+    roomId    Int
+    locked    Boolean  @default(false)
+    isadmin   Boolean  @default(false)
+    timermute String   @default("0")
+    chat      RoomChat @relation(fields: [roomId], references: [id])
+    userroom  User     @relation(fields: [userId], references: [id])
+}
+
+model BlockUsers {
+    id        Int      @id @default(autoincrement())
+    createAt  DateTime @default(now())
+    updatedAt DateTime
+    userId    Int
+    roomId    Int
+    chat      RoomChat @relation(fields: [roomId], references: [id])
+    userroom  User     @relation(fields: [userId], references: [id])
+}
+
+model MessageRoom {
+    id         Int      @id @default(autoincrement())
+    createAt   DateTime @default(now())
+    updatedAt  DateTime
+    userId     Int
+    roomId     Int
+    message    String
+    messageref RoomChat @relation(fields: [roomId], references: [id])
+    usermsg    User     @relation(fields: [userId], references: [id])
+}

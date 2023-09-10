@@ -1,0 +1,20 @@
+import { User } from "../user/user"
+
+model Friend {
+    id       Int          @id @default(autoincrement())
+    user     User         @relation("Me", fields: [userId], references: [id])
+    userId   Int
+    friend   User         @relation("Friend", fields: [friendId], references: [id])
+    friendId Int
+    status   friendStatus @default(pending)
+
+    @@unique([userId, friendId])
+    @@unique([friendId, userId])
+}
+
+
+enum friendStatus {
+  pending
+  accepted
+  rejected
+}
