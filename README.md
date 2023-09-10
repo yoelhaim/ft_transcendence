@@ -33,11 +33,15 @@ The controller handles user input and manages the flow of data between the model
 ## RUN PROJECT
 
 
-####first step:
+#### first step:
 
 create new app from intra [INTRA 42](https://profile.intra.42.fr/oauth/applications/new)
 
+#### second step:
 
+config you backend .env 
+
+#### final step
 ```
 $ docker-compose up --build
 ```
