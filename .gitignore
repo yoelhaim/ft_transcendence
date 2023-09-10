@@ -1,0 +1,4 @@
+*/*.env
+*DS_Store
+/containers/nestjs/back-end/.env
+/.env
