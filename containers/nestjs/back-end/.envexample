@@ -1,0 +1,14 @@
+
+DATABASE_URL="postgresql://username:password@localhost:5432/database?schema=public"
+
+DATABASE_URLC="postgresql://username:password@postgresql:5432/database?schema=public"
+
+
+JWT_SECRET="ADD YOUR SECRET KEY HERE"
+
+CLIENT_ID="ADD YOUR CLIENT ID HERE"
+CLIENT_SECRET="ADD YOUR CLIENT SECRET HERE"
+CALLBACK="http://localhost:8000/42/oauth"
+
+REDIRECT_URL="http://localhost:3000/"
+IMGBB="ADD YOUR IMGBB KEY HERE" # https://api.imgbb.com/
