@@ -23,9 +23,8 @@ The controller handles user input and manages the flow of data between the model
 ![flow](https://github.com/mohanor/ft_transcendence/raw/main/images/flow.png)
 
 ## Database schema
+![schema](https://github.com/yoelhaim/ft_transcendence/assets/30368947/85f369f6-a681-462c-9780-7e6b47128fb9)
 
-![schema](![Uploading drawSQL-trans-export-2023-09-10.png…]()
-)
 
 [!NOTE]
 
