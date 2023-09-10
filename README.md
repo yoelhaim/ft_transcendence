@@ -31,6 +31,13 @@ The controller handles user input and manages the flow of data between the model
 **change  .envexample to .env**
 
 ## RUN PROJECT
+
+
+####first step:
+```
+create new app from intra [INTRA 42] https://profile.intra.42.fr/oauth/applications/new
+```
+
 ```
 $ docker-compose up --build
 ```
