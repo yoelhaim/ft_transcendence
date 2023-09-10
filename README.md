@@ -1,5 +1,13 @@
 # ft_transcendence
 
+created by 
+### mohemmed atef
+### youssef el haimer
+### yasser el azizi
+### youssef oussama
+### anass klaikel
+
+
 ## MVC (Model-View-Controller)
 
 is a pattern in software design commonly used to implement user interfaces, data, and controlling logic
@@ -12,8 +20,8 @@ The controller handles user input and manages the flow of data between the model
 2. NextJS: views
 3. NestJS: application controllers
 
-![flow](images/flow.png)
+![flow](https://github.com/mohanor/ft_transcendence/raw/main/images/flow.png)
 
 ## Database schema
 
-![schema](images/schema.png)
+![schema](https://github.com/mohanor/ft_transcendence/raw/main/images/schema.png)
